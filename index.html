@@ -1,69 +1,145 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hotel TouchMe</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">Hotel TouchMe</h1>
-            <button class="menu=toggle" aria-label="Desplegar Menu">
-                &#9776;
-            </button>
-
-                <ul class="menu">
-                    <li><a href="Login.html">Iniciar Sesion</a></li>
-                    <li><a href="Habitaciones">Habitaciones</a></li>
-                    <li><a href="Reservas.html">Reservas</a></li>
-                    <li><a href="Reseñas.html">Reseñas</a></li>
-                    <li><a href="Contactos.html">Contacto</a></li>
-                </ul>
-            
+<html lang="es">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel TouchMe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header y menú principal -->
+    <header class="header">
+        <div class="header-logo">
+            <img src="src/assets/images/logo.png" alt="Logo Hotel TouchMe">
+            <span>HOTEL TOUCHME</span>
+        </div>
+        <button aria-label="Abrir menú" class="menu-btn">&#9776;</button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Hotel</a></li>
+                <li><a href="#habitaciones">Habitaciones</a></li>
+                <li><a href="#gastronomia">Gastronomía</a></li>
+                <li><a href="#experiencias">Experiencias</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
         </nav>
+        <button class="btn-reserva">RESERVA AHORA</button>
     </header>
 
-    <body>
-        <h1>Bienvenidos al Hotel TouchMe</h1>
-        <p>Tu comodidad es nuestra prioridad, deseamos que tengas una experiencia inolvidable.</p>
-        <img src="src/assets/images/hotel.jpg" alt="Hotel TouchMe">
-    </body>
-
     <main>
-        <h2>Nuestras habitaciones</h2>
-        <p>Contamos con una variedad de habitaciones diseñadas para satisfacer tus necesidades.</p>
-            <ul class="habitaciones">
-                <li>
-                    <article class="habitacion-individual">
+        <!-- HERO: Imagen grande con recuadro de texto encima -->
+        <section class="hero">
+            <img src="src/assets/images/hotel.jpg" alt="Vista principal del hotel" class="hero-img">
+            <div class="hero-text">
+                <h1>Indómita a la vista</h1>
+                <p>Ciudad Encanto es un destino turístico vibrante, famoso por su arquitectura tradicional, paisajes naturales y una vida cultural única. Recorre sus calles llenas de historia, disfruta de su exquisita gastronomía y vive experiencias inolvidables junto al mar y la naturaleza.</p>
+                <a href="#" class="hero-link">Conoce más sobre Ciudad Encanto</a>
+            </div>
+        </section>
+
+        <!-- Sección alterna 1: Imagen izquierda, texto derecha -->
+        <section class="alt-section">
+            <div class="alt-img">
+                <img src="src/assets/images/vista_hotel.webp" alt="Habitación moderna en el hotel">
+            </div>
+            <div class="alt-text">
+                <h2>Confort en el corazón de Santiago</h2>
+                <p>Disfruta de habitaciones modernas y elegantes con vistas a la ciudad. Hotel TouchMe es la opción ideal para familias, parejas y viajeros de negocios, con todas las comodidades que necesitas en el centro de Santiago.</p>
+            </div>
+        </section>
+
+        <!-- Sección alterna 2: Texto izquierda, imagen derecha -->
+        <section class="alt-section reverse">
+            <div class="alt-text">
+                <h2>Vive la ciudad al máximo</h2>
+                <p>Explora museos, parques urbanos, centros comerciales y la vibrante vida nocturna de Santiago. Nuestro hotel es el punto de partida perfecto para descubrir todo lo que la ciudad tiene para ofrecer.</p>
+            </div>
+            <div class="alt-img">
+                <img src="src/assets/images/santiago.jpg" alt="Vista urbana de Santiago">
+            </div>
+        </section>
+
+        <!-- Galería de imágenes -->
+        <section class="galeria">
+            <h2>Galería del Hotel</h2>
+            <div class="carousel-container">
+                <div class="carousel-galeria">
+                    <div class="carousel-slide active">
+                        <img src="src/assets/images/hotel.jpg" alt="Vista exterior del hotel">
+                        <div class="slide-caption">Vista exterior del Hotel TouchMe</div>
+                    </div>
+                    <div class="carousel-slide">
                         <img src="src/assets/images/H_individual.jpg" alt="Habitación Individual">
-                        <h3>Habitación Individual</h3>
-                        <p>Ideal para una persona solitaria, con una buena vista para poder relajarse.</p>
-                        <a href="pages/Habitaciones.html" class="btn=reservar">
-                            Reservar
-                        </a>
-                    </article>
-                </li>
+                        <div class="slide-caption">Habitación Individual - Comodidad y tranquilidad</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="src/assets/images/H_doble.jpg" alt="Habitación Doble">
+                        <div class="slide-caption">Habitación Doble - Perfecta para compartir</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="src/assets/images/H_suite.jpg" alt="Suite Presidencial">
+                        <div class="slide-caption">Suite Presidencial - Lujo y elegancia</div>
+                    </div>
+                    <!-- Botones de navegación -->
+                    <!-- ... (puedes agregar funcionalidad JS después si lo deseas) ... -->
+                </div>
+            </div>
+        </section>
 
-                <li class="habitacion-doble">Habitacion doble</li>
-                    <article class="habitacion-doble">
-                        <img src="src/assets/images/H_doble.jpg" alt="Habitacion Doble">
-                        <h3>Habitacion Doble</h3>
-                        <p>Si buscas una habitacion para compartir con tu amig@ esta habitacion es perfecta para que pasen una buena noche</p>
-                        <a href="pages/Habitaciones.html" class="btn=reservar">
-                            Reservar
-                        </a>
-                    </article>
-                <li class="habitacion-triple">Habitacion Suite</li>
-                    <article class="habitacion-suite">
-                            <img src="src/assets/images/H_suite.jpg" alt="Habitacion Suite">
-                            <h3>Habitacion Suite presidencial</h3>
-                            <p>Una habitacion con el estilo presidencial, donde solo los mas adinerados pueden llegar demuestra hasta donde quieres estar. </p>
-                            <a href="pages/Habitaciones.html" class="btn=reservar">
-                                Reservar
-                            </a>
-                        </article>
-            </ul>
-    </main>
+</body>
+    </body>
+</html>
+        </main>
 
+        <!-- Galería de imágenes -->
+        <section class="galeria">
+            <h2>Galería del Hotel</h2>
+            <div class="carousel-container">
+                <div class="carousel-galeria">
+                    <div class="carousel-slide active">
+                        <img src="src/assets/images/hotel.jpg" alt="Vista exterior del hotel">
+                        <div class="slide-caption">Vista exterior del Hotel TouchMe</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="src/assets/images/H_individual.jpg" alt="Habitación Individual">
+                        <div class="slide-caption">Habitación Individual - Comodidad y tranquilidad</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="src/assets/images/H_doble.jpg" alt="Habitación Doble">
+                        <div class="slide-caption">Habitación Doble - Perfecta para compartir</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="src/assets/images/H_suite.jpg" alt="Suite Presidencial">
+                        <div class="slide-caption">Suite Presidencial - Lujo y elegancia</div>
+                    </div>
+                    
+                    <!-- Botones de navegación -->
+                    <button class="carousel-btn prev" onclick="changeGallerySlide(-1)">❮</button>
+                    <button class="carousel-btn next" onclick="changeGallerySlide(1)">❯</button>
+                    
+                    <!-- Indicadores -->
+                    <div class="carousel-indicators">
+                        <span class="indicator active" onclick="currentGallerySlide(1)"></span>
+                        <span class="indicator" onclick="currentGallerySlide(2)"></span>
+                        <span class="indicator" onclick="currentGallerySlide(3)"></span>
+                        <span class="indicator" onclick="currentGallerySlide(4)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>`
+                <!-- Sección de contacto al final -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Dirección: Av. Principal 123, Ciudad</p>
+            <p>Teléfono: +1 555 123 4567</p>
+            <p>Email: info@hoteltouchme.com</p>
+        </section>
+
+
+
+        <footer>
+            <p>&copy; 2025 Hotel TouchMe. Todos los derechos reservados.</p>
+        </footer>
+    </body>
 </html>
