@@ -84,6 +84,90 @@ header > button:hover {
     box-shadow: 0 4px 16px rgba(255,215,0,0.15);
 }
 
+/* Estilos adicionales para header */
+.header {
+    background: #111;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2rem;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo img {
+    height: 48px;
+}
+
+.header-logo span {
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #FFD700;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px #000;
+}
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #FFD700;
+    font-weight: 500;
+    font-size: 1.08rem;
+    letter-spacing: 1px;
+    transition: color 0.2s, background 0.2s;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.main-nav ul li a:hover {
+    background: #FFD700;
+    color: #181818;
+}
+
+.btn-reserva {
+    background: linear-gradient(90deg, #FFD700 60%, #bfa43a 100%);
+    color: #181818;
+    border: none;
+    padding: 0.7rem 1.7rem;
+    border-radius: 5px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255,215,0,0.08);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-reserva:hover {
+    background: #bfa43a;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(255,215,0,0.15);
+}
+
 /* ===== MAIN & SECTIONS ===== */
 main {
     max-width: 950px;
@@ -139,10 +223,16 @@ main section > div {
     margin-bottom: 1.5rem;
 }
 main section > div img {
-    width: 340px;
-    max-width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(255,215,0,0.10);
+    width: 100%;
+    max-width: 600px;
+    min-width: 320px;
+    height: auto;
+    min-height: 220px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(255,215,0,0.13);
+    background: #222;
 }
 main section > div h2 {
     margin-top: 0;
@@ -223,6 +313,147 @@ footer {
     }
     main section {
         padding: 1.2rem 0.7rem;
+    }
+}
+
+/* =========================
+   CARRUSEL DE GALERÍA
+   ========================= */
+.carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-galeria {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #181818;
+    box-shadow: 0 2px 24px rgba(255,215,0,0.15);
+    min-height: 520px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Todos los slides ocultos por defecto */
+.carousel-slide {
+    display: none;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+/* Solo el slide activo se muestra */
+.carousel-slide.active {
+    display: flex;
+    opacity: 1;
+    position: relative;
+}
+/* Estilos de las imágenes del carrusel */
+.carousel-slide img {
+    max-width: 90%;
+    max-height: 450px;
+    min-height: 280px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(255,215,0,0.15);
+    background: #222;
+}
+/* Caption debajo de la imagen */
+.slide-caption {
+    margin-top: 1.2rem;
+    color: #FFD700;
+    font-size: 1.15rem;
+    background: rgba(24,24,24,0.85);
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+/* Botones de navegación del carrusel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #FFD700;
+    color: #181818;
+    border: none;
+    font-size: 2.3rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255,215,0,0.13);
+    transition: background 0.2s, color 0.2s;
+    z-index: 2;
+    opacity: 0.95;
+}
+.carousel-btn.prev {
+    left: 18px;
+}
+.carousel-btn.next {
+    right: 18px;
+}
+.carousel-btn:hover {
+    background: #bfa43a;
+    color: #fff;
+    opacity: 1;
+}
+/* Indicadores del carrusel */
+.carousel-indicators {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 2;
+}
+.indicator {
+    width: 16px;
+    height: 16px;
+    background: #FFD700;
+    border-radius: 50%;
+    opacity: 0.35;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+    border: 2.5px solid #bfa43a;
+}
+.indicator.active {
+    opacity: 1;
+    transform: scale(1.3);
+    border-color: #FFD700;
+}
+
+@media (max-width: 900px) {
+    .carousel-container {
+        max-width: 98vw;
+    }
+    .carousel-galeria {
+        min-height: 220px;
+    }
+    .carousel-slide img {
+        max-height: 160px;
+        min-height: 100px;
+    }
+    .carousel-btn {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+    }
+    .indicator {
+        width: 12px;
+        height: 12px;
     }
 }
 main {
@@ -344,3 +575,17 @@ footer {
     }
 }
 
+/* =======================================================
+/* animaciones */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estado final: elemento visible y en su posición normal */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitaciones - Hotel TouchMe</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/p_Habitaciones_styles.css">
+</head>
+<body>
+    <!-- Header igual al index -->
+    <header class="header">
+        <div class="header-logo">
+            <img src="../assets/images/logo.png" alt="Logo Hotel TouchMe">
+            <span>HOTEL TOUCHME</span>
+        </div>
+        <button aria-label="Abrir menú" class="menu-btn">&#9776;</button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../index.html">Hotel</a></li>
+                <li><a href="Habitaciones.html">Habitaciones</a></li>
+                <li><a href="#gastronomia">Gastronomía</a></li>
+                <li><a href="#experiencias">Experiencias</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="btn-reserva">RESERVA AHORA</button>
+    </header>
+
+    <main class="habitaciones-main">
+        <!-- Título principal -->
+        <section class="hero-habitaciones">
+            <h1>Nuestras Habitaciones</h1>
+            <p>Encuentra la habitación perfecta para tu estadía en Santiago</p>
+        </section>
+
+        <!-- Sección de filtros y selección de fechas -->
+        <section class="filtros-reserva">
+            <div class="filtro-fechas">
+                <div class="fecha-grupo">
+                    <label for="fecha-entrada">Check-in</label>
+                    <input type="date" id="fecha-entrada" name="fecha-entrada">
+                </div>
+                <div class="fecha-grupo">
+                    <label for="fecha-salida">Check-out</label>
+                    <input type="date" id="fecha-salida" name="fecha-salida">
+                </div>
+                <div class="fecha-grupo">
+                    <label for="num-huespedes">Huéspedes</label>
+                    <select id="num-huespedes" name="num-huespedes">
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                        <option value="3">3 personas</option>
+                        <option value="4">4 personas</option>
+                    </select>
+                </div>
+                <button class="btn-buscar">Buscar disponibilidad</button>
+            </div>
+
+            <!-- Filtros por tipo -->
+            <div class="filtro-tipo">
+                <button class="filtro-btn active" data-tipo="todas">Todas</button>
+                <button class="filtro-btn" data-tipo="individual">Individual</button>
+                <button class="filtro-btn" data-tipo="doble">Doble</button>
+                <button class="filtro-btn" data-tipo="suite">Suite</button>
+            </div>
+        </section>
+
+        <!-- Grid de habitaciones -->
+        <section class="habitaciones-grid">
+            <!-- Habitación Individual -->
+            <article class="habitacion-card" data-tipo="individual" data-precio="50000">
+                <div class="habitacion-imagen">
+                    <img src="../assets/images/H_individual.jpg" alt="Habitación Individual">
+                    <span class="habitacion-badge">Disponible</span>
+                </div>
+                <div class="habitacion-info">
+                    <h2>Habitación Individual</h2>
+                    <p class="habitacion-descripcion">Perfecta para viajeros solos. Incluye cama individual, escritorio, WiFi y baño privado.</p>
+                    
+                    <ul class="habitacion-caracteristicas">
+                        <li>🛏️ 1 cama individual</li>
+                        <li>👤 1 persona</li>
+                        <li>📶 WiFi gratis</li>
+                        <li>🚿 Baño privado</li>
+                        <li>❄️ Aire acondicionado</li>
+                    </ul>
+                    
+                    <div class="habitacion-precio">
+                        <span class="precio-label">Desde</span>
+                        <span class="precio-valor">$50.000</span>
+                        <span class="precio-periodo">por noche</span>
+                    </div>
+                    
+                    <div class="habitacion-acciones">
+                        <button class="btn-detalles">Ver detalles</button>
+                        <button class="btn-reservar">Reservar ahora</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Habitación Doble -->
+            <article class="habitacion-card" data-tipo="doble" data-precio="75000">
+                <div class="habitacion-imagen">
+                    <img src="../assets/images/H_doble.jpg" alt="Habitación Doble">
+                    <span class="habitacion-badge">Disponible</span>
+                </div>
+                <div class="habitacion-info">
+                    <h2>Habitación Doble</h2>
+                    <p class="habitacion-descripcion">Ideal para parejas o amigos. Cama matrimonial o dos camas individuales, espacio amplio y confortable.</p>
+                    
+                    <ul class="habitacion-caracteristicas">
+                        <li>🛏️ 1 cama matrimonial o 2 individuales</li>
+                        <li>👥 2 personas</li>
+                        <li>📶 WiFi gratis</li>
+                        <li>🚿 Baño privado</li>
+                        <li>❄️ Aire acondicionado</li>
+                        <li>📺 TV cable</li>
+                    </ul>
+                    
+                    <div class="habitacion-precio">
+                        <span class="precio-label">Desde</span>
+                        <span class="precio-valor">$75.000</span>
+                        <span class="precio-periodo">por noche</span>
+                    </div>
+                    
+                    <div class="habitacion-acciones">
+                        <button class="btn-detalles">Ver detalles</button>
+                        <button class="btn-reservar">Reservar ahora</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Suite Presidencial -->
+            <article class="habitacion-card" data-tipo="suite" data-precio="150000">
+                <div class="habitacion-imagen">
+                    <img src="../assets/images/H_suite.jpg" alt="Suite Presidencial">
+                    <span class="habitacion-badge destacado">Premium</span>
+                </div>
+                <div class="habitacion-info">
+                    <h2>Suite Presidencial</h2>
+                    <p class="habitacion-descripcion">La máxima expresión de lujo y confort. Sala de estar, jacuzzi, vistas panorámicas de Santiago.</p>
+                    
+                    <ul class="habitacion-caracteristicas">
+                        <li>🛏️ 1 cama king size</li>
+                        <li>👥 2-4 personas</li>
+                        <li>📶 WiFi gratis</li>
+                        <li>🛁 Jacuzzi privado</li>
+                        <li>❄️ Aire acondicionado</li>
+                        <li>📺 Smart TV 55"</li>
+                        <li>🍷 Minibar incluido</li>
+                        <li>🏙️ Vista panorámica</li>
+                    </ul>
+                    
+                    <div class="habitacion-precio">
+                        <span class="precio-label">Desde</span>
+                        <span class="precio-valor">$150.000</span>
+                        <span class="precio-periodo">por noche</span>
+                    </div>
+                    
+                    <div class="habitacion-acciones">
+                        <button class="btn-detalles">Ver detalles</button>
+                        <button class="btn-reservar">Reservar ahora</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Habitación Familiar (nueva opción) -->
+            <article class="habitacion-card" data-tipo="doble" data-precio="95000">
+                <div class="habitacion-imagen">
+                    <img src="../assets/images/H_doble.jpg" alt="Habitación Familiar">
+                    <span class="habitacion-badge">Disponible</span>
+                </div>
+                <div class="habitacion-info">
+                    <h2>Habitación Familiar</h2>
+                    <p class="habitacion-descripcion">Espaciosa habitación para familias. Dos camas matrimoniales y espacio para niños.</p>
+                    
+                    <ul class="habitacion-caracteristicas">
+                        <li>🛏️ 2 camas matrimoniales</li>
+                        <li>👨‍👩‍👧‍👦 4 personas</li>
+                        <li>📶 WiFi gratis</li>
+                        <li>🚿 Baño privado amplio</li>
+                        <li>❄️ Aire acondicionado</li>
+                        <li>📺 TV cable</li>
+                        <li>🎮 Área de juegos</li>
+                    </ul>
+                    
+                    <div class="habitacion-precio">
+                        <span class="precio-label">Desde</span>
+                        <span class="precio-valor">$95.000</span>
+                        <span class="precio-periodo">por noche</span>
+                    </div>
+                    
+                    <div class="habitacion-acciones">
+                        <button class="btn-detalles">Ver detalles</button>
+                        <button class="btn-reservar">Reservar ahora</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sección de beneficios -->
+        <section class="beneficios">
+            <h2>¿Por qué reservar con nosotros?</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-item">
+                    <span class="beneficio-icon">💰</span>
+                    <h3>Mejor precio garantizado</h3>
+                    <p>Encuentra las mejores tarifas directamente con nosotros</p>
+                </div>
+                <div class="beneficio-item">
+                    <span class="beneficio-icon">🔄</span>
+                    <h3>Cancelación flexible</h3>
+                    <p>Cancela hasta 24 horas antes sin cargo</p>
+                </div>
+                <div class="beneficio-item">
+                    <span class="beneficio-icon">⭐</span>
+                    <h3>Atención personalizada</h3>
+                    <p>Nuestro equipo está disponible 24/7</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Hotel TouchMe. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modal de Detalles -->
+    <div id="modal-detalles" class="modal">
+        <div class="modal-contenido">
+            <span class="modal-cerrar">&times;</span>
+            <div class="modal-body">
+                <div class="modal-imagen">
+                    <img id="modal-img" src="" alt="Habitación">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-titulo">Habitación</h2>
+                    <p id="modal-descripcion" class="modal-descripcion"></p>
+                    
+                    <h3>Características incluidas:</h3>
+                    <ul id="modal-caracteristicas" class="modal-caracteristicas">
+                    </ul>
+                    
+                    <!-- Sección de Reseñas -->
+                    <div class="modal-resenas">
+                        <h3>⭐ Reseñas de huéspedes</h3>
+                        <div id="modal-resenas-container" class="resenas-container">
+                            <!-- Las reseñas se cargarán dinámicamente -->
+                        </div>
+                    </div>
+                    
+                    <div class="modal-precio-box">
+                        <span class="modal-precio-label">Precio por noche:</span>
+                        <span id="modal-precio" class="modal-precio-valor">$0</span>
+                    </div>
+                    
+                    <button id="modal-btn-reservar" class="btn-reservar-modal">Reservar esta habitación</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/reservas.js"></script>
+    <script src="../../js/habitaciones.js"></script>
+</body>
+</html>

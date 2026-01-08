@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel TouchMe</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/styles/styles.css">
 </head>
 <body>
-    <!-- Header y menú principal -->
     <header class="header">
         <div class="header-logo">
             <img src="src/assets/images/logo.png" alt="Logo Hotel TouchMe">
@@ -18,7 +16,7 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="#">Hotel</a></li>
-                <li><a href="#habitaciones">Habitaciones</a></li>
+                <li><a href="src/pages/Habitaciones.html">Habitaciones</a></li>
                 <li><a href="#gastronomia">Gastronomía</a></li>
                 <li><a href="#experiencias">Experiencias</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -26,20 +24,46 @@
         </nav>
         <button class="btn-reserva">RESERVA AHORA</button>
     </header>
-
     <main>
         <!-- HERO: Imagen grande con recuadro de texto encima -->
         <section class="hero">
-            <img src="src/assets/images/hotel.jpg" alt="Vista principal del hotel" class="hero-img">
+            <img src="src/assets/images/hotel.jpg" alt="Vista principal del hotel en Santiago" class="hero-img">
             <div class="hero-text">
-                <h1>Indómita a la vista</h1>
-                <p>Ciudad Encanto es un destino turístico vibrante, famoso por su arquitectura tradicional, paisajes naturales y una vida cultural única. Recorre sus calles llenas de historia, disfruta de su exquisita gastronomía y vive experiencias inolvidables junto al mar y la naturaleza.</p>
-                <a href="#" class="hero-link">Conoce más sobre Ciudad Encanto</a>
+                <h1>Descubre Santiago desde el Hotel TouchMe</h1>
+                <p>Ubicado en el corazón de Santiago, nuestro hotel te conecta con la energía de la ciudad, su arquitectura moderna, su cultura vibrante y sus múltiples opciones gastronómicas y de entretenimiento. Vive la experiencia urbana con la máxima comodidad y estilo.</p>
+                <a href="#" class="hero-link">Conoce más sobre Santiago</a>
+                <a href="src/pages/Reserva.html" class="btn-reserva-hero">Reserva ahora</a>
             </div>
         </section>
 
+        <!-- Servicios destacados -->
+        <section class="servicios fade-in">
+            <h2>Servicios Destacados</h2>
+            <ul class="servicios-lista">
+                <li>🛏️ Habitaciones modernas</li>
+                <li>🍳 Desayuno buffet</li>
+                <li>📶 WiFi gratuito</li>
+                <li>🏋️ Gimnasio</li>
+                <li>🅿️ Estacionamiento</li>
+                <li>💼 Salas de reuniones</li>
+            </ul>
+        </section>
+
+        <!-- Testimonios de clientes -->
+        <section class="testimonios fade-in">
+            <h2>Lo que dicen nuestros huéspedes</h2>
+            <blockquote>
+                “Excelente ubicación y atención. ¡Volvería sin dudarlo!”<br>
+                <cite>- Camila R.</cite>
+            </blockquote>
+            <blockquote>
+                “Habitaciones cómodas y modernas, ideal para viajes de negocios.”<br>
+                <cite>- Javier M.</cite>
+            </blockquote>
+        </section>
+
         <!-- Sección alterna 1: Imagen izquierda, texto derecha -->
-        <section class="alt-section">
+        <section class="alt-section fade-in">
             <div class="alt-img">
                 <img src="src/assets/images/vista_hotel.webp" alt="Habitación moderna en el hotel">
             </div>
@@ -50,7 +74,7 @@
         </section>
 
         <!-- Sección alterna 2: Texto izquierda, imagen derecha -->
-        <section class="alt-section reverse">
+        <section class="alt-section reverse fade-in">
             <div class="alt-text">
                 <h2>Vive la ciudad al máximo</h2>
                 <p>Explora museos, parques urbanos, centros comerciales y la vibrante vida nocturna de Santiago. Nuestro hotel es el punto de partida perfecto para descubrir todo lo que la ciudad tiene para ofrecer.</p>
@@ -58,13 +82,14 @@
             <div class="alt-img">
                 <img src="src/assets/images/santiago.jpg" alt="Vista urbana de Santiago">
             </div>
-        </section>
+        </section> 
 
         <!-- Galería de imágenes -->
-        <section class="galeria">
+        <section class="galeria fade-in">
             <h2>Galería del Hotel</h2>
             <div class="carousel-container">
                 <div class="carousel-galeria">
+                    <!-- Slides del carrusel -->
                     <div class="carousel-slide active">
                         <img src="src/assets/images/hotel.jpg" alt="Vista exterior del hotel">
                         <div class="slide-caption">Vista exterior del Hotel TouchMe</div>
@@ -81,65 +106,33 @@
                         <img src="src/assets/images/H_suite.jpg" alt="Suite Presidencial">
                         <div class="slide-caption">Suite Presidencial - Lujo y elegancia</div>
                     </div>
-                    <!-- Botones de navegación -->
-                    <!-- ... (puedes agregar funcionalidad JS después si lo deseas) ... -->
-                </div>
-            </div>
-        </section>
-
-</body>
-    </body>
-</html>
-        </main>
-
-        <!-- Galería de imágenes -->
-        <section class="galeria">
-            <h2>Galería del Hotel</h2>
-            <div class="carousel-container">
-                <div class="carousel-galeria">
-                    <div class="carousel-slide active">
-                        <img src="src/assets/images/hotel.jpg" alt="Vista exterior del hotel">
-                        <div class="slide-caption">Vista exterior del Hotel TouchMe</div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="src/assets/images/H_individual.jpg" alt="Habitación Individual">
-                        <div class="slide-caption">Habitación Individual - Comodidad y tranquilidad</div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="src/assets/images/H_doble.jpg" alt="Habitación Doble">
-                        <div class="slide-caption">Habitación Doble - Perfecta para compartir</div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="src/assets/images/H_suite.jpg" alt="Suite Presidencial">
-                        <div class="slide-caption">Suite Presidencial - Lujo y elegancia</div>
-                    </div>
-                    
-                    <!-- Botones de navegación -->
-                    <button class="carousel-btn prev" onclick="changeGallerySlide(-1)">❮</button>
-                    <button class="carousel-btn next" onclick="changeGallerySlide(1)">❯</button>
-                    
-                    <!-- Indicadores -->
+                    <!-- Botones de navegación del carrusel -->
+                    <button class="carousel-btn prev">❮</button>
+                    <button class="carousel-btn next">❯</button>
+                    <!-- Indicadores del carrusel -->
                     <div class="carousel-indicators">
-                        <span class="indicator active" onclick="currentGallerySlide(1)"></span>
-                        <span class="indicator" onclick="currentGallerySlide(2)"></span>
-                        <span class="indicator" onclick="currentGallerySlide(3)"></span>
-                        <span class="indicator" onclick="currentGallerySlide(4)"></span>
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
                     </div>
                 </div>
             </div>
-        </section>`
-                <!-- Sección de contacto al final -->
+        </section>
+        <!-- Sección de contacto al final -->
         <section id="contacto">
             <h2>Contacto</h2>
-            <p>Dirección: Av. Principal 123, Ciudad</p>
-            <p>Teléfono: +1 555 123 4567</p>
+            <p>Dirección: Av. Principal 123, Santiago</p>
+            <p>Teléfono: +569 34237823</p>
             <p>Email: info@hoteltouchme.com</p>
         </section>
-
-
-
         <footer>
             <p>&copy; 2025 Hotel TouchMe. Todos los derechos reservados.</p>
         </footer>
-    </body>
+    </main>
+    <!-- Enlace al JS del carrusel -->
+    <script src="js/carousel.js"></script>
+    <!-- Enlace al JS de animaciones -->
+    <script src="js/animations.js"></script>
+</body>
 </html>
