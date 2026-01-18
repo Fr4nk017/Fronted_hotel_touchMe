@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Hotel TouchMe</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/p_Login_styles.css">
+</head>
+<body class="login-body">
+    
+    <!-- Contenedor principal del login -->
+    <div class="login-container">
+        
+        <!-- Panel izquierdo con imagen y branding -->
+        <div class="login-panel-izquierdo">
+            <div class="login-branding">
+                <h1>🏨 HOTEL TOUCHME</h1>
+                <p>Tu experiencia de lujo en Santiago</p>
+            </div>
+            <div class="login-decoracion">
+                <div class="circulo circulo-1"></div>
+                <div class="circulo circulo-2"></div>
+                <div class="circulo circulo-3"></div>
+            </div>
+        </div>
+        
+        <!-- Panel derecho con formulario -->
+        <div class="login-panel-derecho">
+            
+            <!-- Botón volver -->
+            <a href="../../index.html" class="btn-volver">
+                ← Volver al inicio
+            </a>
+            
+            <!-- Formulario de Login -->
+            <div class="login-form-container" id="login-form">
+                <h2>Iniciar Sesión</h2>
+                <p class="login-subtitulo">Accede a tu cuenta para gestionar tus reservas</p>
+                
+                <form id="form-login" class="auth-form">
+                    <div class="form-grupo">
+                        <label for="login-email">📧 Correo electrónico</label>
+                        <input 
+                            type="email" 
+                            id="login-email" 
+                            name="email" 
+                            placeholder="tu@email.com"
+                            required
+                            autocomplete="email">
+                    </div>
+                    
+                    <div class="form-grupo">
+                        <label for="login-password">🔒 Contraseña</label>
+                        <input 
+                            type="password" 
+                            id="login-password" 
+                            name="password" 
+                            placeholder="••••••••"
+                            required
+                            autocomplete="current-password">
+                        <button type="button" class="toggle-password" data-target="login-password">
+                            👁️ Mostrar
+                        </button>
+                    </div>
+                    
+                    <div class="form-opciones">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="recordar">
+                            <span>Recordarme</span>
+                        </label>
+                        <a href="#" class="link-recuperar">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">
+                        Iniciar Sesión
+                    </button>
+                    
+                    <div class="mensaje-error" id="mensaje-error-login"></div>
+                </form>
+                
+                <div class="cambiar-formulario">
+                    <p>¿No tienes una cuenta? 
+                        <a href="#" id="mostrar-registro">Regístrate aquí</a>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Formulario de Registro -->
+            <div class="login-form-container" id="registro-form" style="display: none;">
+                <h2>Crear Cuenta</h2>
+                <p class="login-subtitulo">Regístrate para hacer reservas y disfrutar beneficios exclusivos</p>
+                
+                <form id="form-registro" class="auth-form">
+                    <div class="form-grupo">
+                        <label for="registro-nombre">👤 Nombre completo</label>
+                        <input 
+                            type="text" 
+                            id="registro-nombre" 
+                            name="nombre" 
+                            placeholder="Juan Pérez"
+                            required
+                            autocomplete="name">
+                    </div>
+                    
+                    <div class="form-grupo">
+                        <label for="registro-email">📧 Correo electrónico</label>
+                        <input 
+                            type="email" 
+                            id="registro-email" 
+                            name="email" 
+                            placeholder="tu@email.com"
+                            required
+                            autocomplete="email">
+                    </div>
+                    
+                    <div class="form-grupo">
+                        <label for="registro-telefono">📱 Teléfono</label>
+                        <input 
+                            type="tel" 
+                            id="registro-telefono" 
+                            name="telefono" 
+                            placeholder="+56 9 1234 5678"
+                            required
+                            autocomplete="tel">
+                    </div>
+                    
+                    <div class="form-grupo">
+                        <label for="registro-password">🔒 Contraseña</label>
+                        <input 
+                            type="password" 
+                            id="registro-password" 
+                            name="password" 
+                            placeholder="••••••••"
+                            required
+                            autocomplete="new-password">
+                        <button type="button" class="toggle-password" data-target="registro-password">
+                            👁️ Mostrar
+                        </button>
+                        <small class="password-hint">Mínimo 6 caracteres</small>
+                    </div>
+                    
+                    <div class="form-grupo">
+                        <label for="registro-password-confirmar">🔒 Confirmar contraseña</label>
+                        <input 
+                            type="password" 
+                            id="registro-password-confirmar" 
+                            name="password-confirmar" 
+                            placeholder="••••••••"
+                            required
+                            autocomplete="new-password">
+                    </div>
+                    
+                    <div class="form-opciones">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="aceptar-terminos" required>
+                            <span>Acepto los <a href="#" class="link-terminos">términos y condiciones</a></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">
+                        Crear Cuenta
+                    </button>
+                    
+                    <div class="mensaje-error" id="mensaje-error-registro"></div>
+                </form>
+                
+                <div class="cambiar-formulario">
+                    <p>¿Ya tienes una cuenta? 
+                        <a href="#" id="mostrar-login">Inicia sesión aquí</a>
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <!-- Scripts -->
+    <script src="../../js/reservas.js"></script>
+    <script src="../../js/login.js"></script>
+</body>
+</html>

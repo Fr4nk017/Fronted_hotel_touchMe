@@ -1,0 +1,408 @@
+/* ========================================
+   ESTILOS PARA PÁGINA DE LOGIN/REGISTRO
+   ======================================== */
+
+/* Body del login */
+.login-body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0a0a 0%, #181818 50%, #0a0a0a 100%);
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+   ======================================== */
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 95%;
+    max-width: 1100px;
+    min-height: 650px;
+    background: #222;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.15);
+    overflow: hidden;
+    border: 2px solid #FFD700;
+}
+
+/* ========================================
+   PANEL IZQUIERDO (Branding)
+   ======================================== */
+.login-panel-izquierdo {
+    background: linear-gradient(135deg, #FFD700 0%, #bfa43a 100%);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-branding {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.login-branding h1 {
+    font-size: 3rem;
+    color: #181818;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.login-branding p {
+    font-size: 1.3rem;
+    color: #181818;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Decoración con círculos */
+.login-decoracion {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.circulo {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(24, 24, 24, 0.1);
+}
+
+.circulo-1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -100px;
+}
+
+.circulo-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    left: -50px;
+}
+
+.circulo-3 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ========================================
+   PANEL DERECHO (Formularios)
+   ======================================== */
+.login-panel-derecho {
+    padding: 3rem;
+    background: #222;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Botón volver */
+.btn-volver {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 1.5px solid #FFD700;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.btn-volver:hover {
+    background: #FFD700;
+    color: #181818;
+    transform: translateX(-3px);
+}
+
+/* ========================================
+   FORMULARIOS
+   ======================================== */
+.login-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.login-form-container h2 {
+    color: #FFD700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.login-subtitulo {
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Grupos de formulario */
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.form-grupo label {
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-grupo input {
+    padding: 0.9rem;
+    background: #181818;
+    border: 1.5px solid #444;
+    border-radius: 8px;
+    color: #f5f5f5;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-grupo input:focus {
+    outline: none;
+    border-color: #FFD700;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+.form-grupo input::placeholder {
+    color: #666;
+}
+
+/* Botón mostrar/ocultar contraseña */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    background: transparent;
+    border: none;
+    color: #FFD700;
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+    transition: color 0.2s;
+}
+
+.toggle-password:hover {
+    color: #bfa43a;
+}
+
+/* Hint de contraseña */
+.password-hint {
+    color: #888;
+    font-size: 0.8rem;
+    margin-top: -0.3rem;
+}
+
+/* Opciones del formulario */
+.form-opciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ccc;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #FFD700;
+}
+
+.link-recuperar,
+.link-terminos {
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.link-recuperar:hover,
+.link-terminos:hover {
+    color: #bfa43a;
+    text-decoration: underline;
+}
+
+/* Botón submit */
+.btn-submit {
+    padding: 1rem;
+    background: linear-gradient(90deg, #FFD700 60%, #bfa43a 100%);
+    border: none;
+    border-radius: 8px;
+    color: #181818;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+    background: #bfa43a;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Mensajes de error */
+.mensaje-error {
+    display: none;
+    padding: 0.8rem;
+    background: #ff4444;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    animation: shake 0.5s;
+}
+
+.mensaje-error.mostrar {
+    display: block;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Mensaje de éxito */
+.mensaje-exito {
+    display: none;
+    padding: 0.8rem;
+    background: #28a745;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    animation: fadeIn 0.5s;
+}
+
+.mensaje-exito.mostrar {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Cambiar formulario */
+.cambiar-formulario {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+}
+
+.cambiar-formulario p {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.cambiar-formulario a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.cambiar-formulario a:hover {
+    color: #bfa43a;
+    text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 968px) {
+    .login-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    
+    .login-panel-izquierdo {
+        padding: 2rem;
+        min-height: 200px;
+    }
+    
+    .login-branding h1 {
+        font-size: 2rem;
+    }
+    
+    .login-branding p {
+        font-size: 1rem;
+    }
+    
+    .btn-volver {
+        position: static;
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+    
+    .login-panel-derecho {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 100%;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+    
+    .login-form-container h2 {
+        font-size: 1.5rem;
+    }
+    
+    .form-opciones {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
