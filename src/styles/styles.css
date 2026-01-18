@@ -589,3 +589,226 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ========================================
+   SECCIÓN GASTRONOMÍA
+   ======================================== */
+.gastronomia {
+    background: #222;
+    border-radius: 14px;
+    padding: 3rem 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.gastronomia h2 {
+    color: #FFD700;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.seccion-intro {
+    color: #ccc;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gastronomia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.gastro-card {
+    background: #181818;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1.5px solid #333;
+}
+
+.gastro-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.15);
+    border-color: #FFD700;
+}
+
+.gastro-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.gastro-card h3 {
+    color: #FFD700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.gastro-card p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.horario {
+    display: inline-block;
+    background: #FFD700;
+    color: #181818;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.gastro-destacado {
+    background: linear-gradient(135deg, #333 0%, #222 100%);
+    border-left: 4px solid #FFD700;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.gastro-destacado h3 {
+    color: #FFD700;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.gastro-destacado p {
+    color: #ccc;
+    line-height: 1.7;
+}
+
+/* ========================================
+   SECCIÓN EXPERIENCIAS
+   ======================================== */
+.experiencias {
+    background: #222;
+    border-radius: 14px;
+    padding: 3rem 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.experiencias h2 {
+    color: #FFD700;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.experiencias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.exp-card {
+    background: #181818;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1.5px solid #333;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.exp-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.15);
+    border-color: #FFD700;
+}
+
+.exp-imagen {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.exp-card h3 {
+    color: #FFD700;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.exp-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.exp-detalles {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.exp-detalles li {
+    color: #f5f5f5;
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+}
+
+.btn-experiencia {
+    background: linear-gradient(90deg, #FFD700 60%, #bfa43a 100%);
+    color: #181818;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: auto;
+}
+
+.btn-experiencia:hover {
+    background: #bfa43a;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.exp-info {
+    background: #181818;
+    border-left: 4px solid #FFD700;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.exp-info p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+.exp-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   RESPONSIVE PARA NUEVAS SECCIONES
+   ======================================== */
+@media (max-width: 768px) {
+    .gastronomia-grid,
+    .experiencias-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gastronomia h2,
+    .experiencias h2 {
+        font-size: 2rem;
+    }
+    
+    .gastro-icon,
+    .exp-imagen {
+        font-size: 3rem;
+    }
+}
