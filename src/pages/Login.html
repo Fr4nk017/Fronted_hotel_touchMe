@@ -176,8 +176,105 @@
         
     </div>
     
+    <!-- Modal de Recuperación de Contraseña -->
+    <div id="modal-recuperar" class="modal-recuperar">
+        <div class="modal-recuperar-contenido">
+            <span class="modal-recuperar-cerrar">&times;</span>
+            
+            <!-- Paso 1: Solicitar email -->
+            <div id="paso-email" class="paso-recuperacion active">
+                <h2>🔑 Recuperar Contraseña</h2>
+                <p class="modal-subtitulo">Ingresa tu email y te enviaremos un código de recuperación</p>
+                
+                <form id="form-solicitar-codigo">
+                    <div class="form-grupo">
+                        <label for="recuperar-email">📧 Correo electrónico</label>
+                        <input 
+                            type="email" 
+                            id="recuperar-email" 
+                            placeholder="tu@email.com"
+                            required>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">
+                        Enviar código de recuperación
+                    </button>
+                    
+                    <div class="mensaje-error" id="error-recuperar-email"></div>
+                </form>
+            </div>
+            
+            <!-- Paso 2: Ingresar código -->
+            <div id="paso-codigo" class="paso-recuperacion">
+                <h2>📬 Código de Recuperación</h2>
+                <p class="modal-subtitulo">Hemos enviado un código de 6 dígitos a tu correo</p>
+                
+                <form id="form-verificar-codigo">
+                    <div class="form-grupo">
+                        <label for="codigo-recuperacion">🔢 Código de recuperación</label>
+                        <input 
+                            type="text" 
+                            id="codigo-recuperacion" 
+                            placeholder="123456"
+                            maxlength="6"
+                            required>
+                        <small class="codigo-hint">Revisa tu bandeja de entrada y spam</small>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">
+                        Verificar código
+                    </button>
+                    
+                    <div class="mensaje-error" id="error-codigo"></div>
+                    
+                    <p class="reenviar-codigo">
+                        ¿No recibiste el código? <a href="#" id="reenviar-codigo">Reenviar</a>
+                    </p>
+                </form>
+            </div>
+            
+            <!-- Paso 3: Nueva contraseña -->
+            <div id="paso-nueva-password" class="paso-recuperacion">
+                <h2>🔐 Nueva Contraseña</h2>
+                <p class="modal-subtitulo">Crea una nueva contraseña segura para tu cuenta</p>
+                
+                <form id="form-nueva-password">
+                    <div class="form-grupo">
+                        <label for="nueva-password">🔒 Nueva contraseña</label>
+                        <input 
+                            type="password" 
+                            id="nueva-password" 
+                            placeholder="••••••••"
+                            required>
+                        <button type="button" class="toggle-password" data-target="nueva-password">
+                            👁️ Mostrar
+                        </button>
+                        <small class="password-hint">Mínimo 6 caracteres</small>
+                    </div>
+                    
+                    <div class="form-grupo">
+                        <label for="confirmar-nueva-password">🔒 Confirmar contraseña</label>
+                        <input 
+                            type="password" 
+                            id="confirmar-nueva-password" 
+                            placeholder="••••••••"
+                            required>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">
+                        Cambiar contraseña
+                    </button>
+                    
+                    <div class="mensaje-error" id="error-nueva-password"></div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    
     <!-- Scripts -->
     <script src="../../js/reservas.js"></script>
     <script src="../../js/login.js"></script>
+    <script src="../../js/recuperar-password.js"></script>
 </body>
 </html>
