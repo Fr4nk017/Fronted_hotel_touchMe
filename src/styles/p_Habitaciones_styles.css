@@ -624,6 +624,177 @@
 }
 
 /* ========================================
+   BOTÓN VER EN 360°
+   ======================================== */
+.btn-ver-360 {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #181818;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-ver-360:hover {
+    background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+}
+
+.btn-ver-360:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* ========================================
+   MODAL VISTA 360°
+   ======================================== */
+.modal-360 {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-360.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-360-contenido {
+    width: 95%;
+    max-width: 1400px;
+    height: 90vh;
+    background: #181818;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(255, 215, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-360-header {
+    background: linear-gradient(90deg, #FFD700 0%, #bfa43a 100%);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-360-header h3 {
+    color: #181818;
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.modal-360-cerrar {
+    color: #181818;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1;
+    padding: 0 0.5rem;
+}
+
+.modal-360-cerrar:hover {
+    color: #fff;
+    transform: rotate(90deg) scale(1.2);
+}
+
+.panorama-viewer {
+    width: 100%;
+    flex: 1;
+    background: #000;
+    position: relative;
+}
+
+.controles-360 {
+    background: #222;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 2px solid #FFD700;
+}
+
+.btn-control-360 {
+    background: #FFD700;
+    color: #181818;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+}
+
+.btn-control-360:hover {
+    background: #bfa43a;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.btn-control-360:active {
+    transform: translateY(0);
+}
+
+.info-360 {
+    flex: 1;
+    text-align: center;
+    color: #FFD700;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Estilos para Pannellum */
+.pnlm-container {
+    border-radius: 0 !important;
+}
+
+.pnlm-load-box {
+    background-color: #181818 !important;
+    color: #FFD700 !important;
+}
+
+.pnlm-load-button {
+    background-color: #FFD700 !important;
+    color: #181818 !important;
+}
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 @media (max-width: 768px) {
@@ -662,5 +833,39 @@
     
     .modal-info h2 {
         font-size: 1.5rem;
+    }
+    
+    /* Modal 360 responsive */
+    .modal-360-contenido {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+    
+    .modal-360-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .controles-360 {
+        flex-wrap: wrap;
+        padding: 0.8rem;
+        gap: 0.5rem;
+    }
+    
+    .btn-control-360 {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .info-360 {
+        width: 100%;
+        font-size: 0.85rem;
+    }
+    
+    .btn-ver-360 {
+        bottom: 10px;
+        right: 10px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
     }
 }

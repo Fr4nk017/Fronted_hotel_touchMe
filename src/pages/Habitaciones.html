@@ -24,7 +24,7 @@
                 <li><a href="../../index.html#contacto">Contacto</a></li>
             </ul>
         </nav>
-        <button class="btn-reserva">RESERVA AHORA</button>
+        <button class="btn-reserva" type="button">RESERVA AHORA</button>
     </header>
 
     <main class="habitaciones-main">
@@ -54,15 +54,15 @@
                         <option value="4">4 personas</option>
                     </select>
                 </div>
-                <button class="btn-buscar">Buscar disponibilidad</button>
+                <button class="btn-buscar" type="button">Buscar disponibilidad</button>
             </div>
 
             <!-- Filtros por tipo -->
             <div class="filtro-tipo">
-                <button class="filtro-btn active" data-tipo="todas">Todas</button>
-                <button class="filtro-btn" data-tipo="individual">Individual</button>
-                <button class="filtro-btn" data-tipo="doble">Doble</button>
-                <button class="filtro-btn" data-tipo="suite">Suite</button>
+                <button class="filtro-btn active" data-tipo="todas" type="button">Todas</button>
+                <button class="filtro-btn" data-tipo="individual" type="button">Individual</button>
+                <button class="filtro-btn" data-tipo="doble" type="button">Doble</button>
+                <button class="filtro-btn" data-tipo="suite" type="button">Suite</button>
             </div>
         </section>
 
@@ -93,8 +93,8 @@
                     </div>
                     
                     <div class="habitacion-acciones">
-                        <button class="btn-detalles">Ver detalles</button>
-                        <button class="btn-reservar">Reservar ahora</button>
+                        <button class="btn-detalles" type="button">Ver detalles</button>
+                        <button class="btn-reservar" type="button">Reservar ahora</button>
                     </div>
                 </div>
             </article>
@@ -125,8 +125,8 @@
                     </div>
                     
                     <div class="habitacion-acciones">
-                        <button class="btn-detalles">Ver detalles</button>
-                        <button class="btn-reservar">Reservar ahora</button>
+                        <button class="btn-detalles" type="button">Ver detalles</button>
+                        <button class="btn-reservar" type="button">Reservar ahora</button>
                     </div>
                 </div>
             </article>
@@ -159,8 +159,8 @@
                     </div>
                     
                     <div class="habitacion-acciones">
-                        <button class="btn-detalles">Ver detalles</button>
-                        <button class="btn-reservar">Reservar ahora</button>
+                        <button class="btn-detalles" type="button">Ver detalles</button>
+                        <button class="btn-reservar" type="button">Reservar ahora</button>
                     </div>
                 </div>
             </article>
@@ -168,7 +168,7 @@
             <!-- Habitación Familiar (nueva opción) -->
             <article class="habitacion-card" data-tipo="doble" data-precio="95000">
                 <div class="habitacion-imagen">
-                    <img src="../assets/images/H_doble.jpg" alt="Habitación Familiar">
+                    <img src="../assets/images/HFamiliar.png" alt="Habitación Familiar">
                     <span class="habitacion-badge">Disponible</span>
                 </div>
                 <div class="habitacion-info">
@@ -192,8 +192,8 @@
                     </div>
                     
                     <div class="habitacion-acciones">
-                        <button class="btn-detalles">Ver detalles</button>
-                        <button class="btn-reservar">Reservar ahora</button>
+                        <button class="btn-detalles" type="button">Ver detalles</button>
+                        <button class="btn-reservar" type="button">Reservar ahora</button>
                     </div>
                 </div>
             </article>
@@ -234,6 +234,9 @@
             <div class="modal-body">
                 <div class="modal-imagen">
                     <img id="modal-img" src="" alt="Habitación">
+                    <button id="btn-ver-360" class="btn-ver-360" type="button" title="Ver habitación en 360°">
+                        🔄 Ver en 360°
+                    </button>
                 </div>
                 <div class="modal-info">
                     <h2 id="modal-titulo">Habitación</h2>
@@ -256,14 +259,40 @@
                         <span id="modal-precio" class="modal-precio-valor">$0</span>
                     </div>
                     
-                    <button id="modal-btn-reservar" class="btn-reservar-modal">Reservar esta habitación</button>
+                    <button id="modal-btn-reservar" class="btn-reservar-modal" type="button">Reservar esta habitación</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal Vista 360° -->
+    <div id="modal-360" class="modal-360">
+        <div class="modal-360-contenido">
+            <div class="modal-360-header">
+                <h3 id="titulo-360">Vista 360° - Habitación</h3>
+                <span class="modal-360-cerrar">&times;</span>
+            </div>
+            <div id="panorama-viewer" class="panorama-viewer"></div>
+            <div class="controles-360">
+                <button id="btn-zoom-in" class="btn-control-360" type="button" title="Acercar">🔍+</button>
+                <button id="btn-zoom-out" class="btn-control-360" type="button" title="Alejar">🔍-</button>
+                <button id="btn-fullscreen" class="btn-control-360" type="button" title="Pantalla completa">⛶</button>
+                <div class="info-360">
+                    <span>💡 Arrastra para girar | Rueda para zoom</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pannellum CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    
     <!-- Scripts -->
     <script src="../../js/reservas.js"></script>
     <script src="../../js/habitaciones.js"></script>
+    
+    <!-- Pannellum JS -->
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script src="../../js/vista360.js"></script>
 </body>
 </html>

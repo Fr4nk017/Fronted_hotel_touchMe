@@ -478,5 +478,65 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
     
+    // ========== BOTÓN DE RESERVA DEL HEADER ==========
+    
+    /**
+     * Maneja el click en el botón "RESERVA AHORA" del header
+     * Este botón funciona igual que en el index.html
+     */
+    const btnReservaHeader = document.querySelector('header .btn-reserva');
+    
+    if (btnReservaHeader) {
+        btnReservaHeader.addEventListener('click', function() {
+            // Verificar si hay usuario logueado
+            const usuarioLogueado = localStorage.getItem('usuarioLogueado');
+            
+            if (usuarioLogueado) {
+                // Usuario logueado - Scroll a la sección de habitaciones
+                const habitacionesGrid = document.querySelector('.habitaciones-grid');
+                if (habitacionesGrid) {
+                    habitacionesGrid.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }
+                
+                // Mostrar mensaje amigable
+                const usuario = JSON.parse(usuarioLogueado);
+                setTimeout(() => {
+                    alert(`👋 Hola ${usuario.nombre}!\n\nSelecciona las fechas y la habitación que prefieras.`);
+                }, 500);
+            } else {
+                // Usuario NO logueado - Preguntar si quiere iniciar sesión
+                const respuesta = confirm(
+                    '🏨 ¡Bienvenido a Hotel TouchMe!\n\n' +
+                    'Para hacer una reserva necesitas iniciar sesión.\n\n' +
+                    '¿Deseas iniciar sesión ahora?'
+                );
+                
+                if (respuesta) {
+                    // Guardar la página actual para volver después
+                    localStorage.setItem('paginaAnterior', window.location.href);
+                    window.location.href = 'Login.html';
+                }
+            }
+        });
+    }
+    
+    /**
+     * Mostrar nombre del usuario en el botón del header si está logueado
+     */
+    function mostrarUsuarioEnHeader() {
+        const usuarioLogueado = localStorage.getItem('usuarioLogueado');
+        if (usuarioLogueado && btnReservaHeader) {
+            const usuario = JSON.parse(usuarioLogueado);
+            btnReservaHeader.innerHTML = `👤 ${usuario.nombre.split(' ')[0]}`;
+            btnReservaHeader.title = 'Usuario logueado';
+        }
+    }
+    
+    // Ejecutar al cargar
+    mostrarUsuarioEnHeader();
+    
     console.log('Sistema de habitaciones inicializado correctamente ✅');
 });
